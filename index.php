@@ -47,13 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="login-card">
             <h1>POLGAN MART</h1>
             
-
+            <?php if (!empty($error_message)): ?>
+                <div class="error-message">
+                    <?php echo $error_message; ?>
+                </div>
+            <?php endif; ?>
 
             <form action="index.php" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type
-="text" id="username" name="username" value="" required>
+="text" id="username" name="username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" required>
                 </div>
                 
                 <div class="form-group">
