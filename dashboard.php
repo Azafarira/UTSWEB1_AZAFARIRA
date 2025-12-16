@@ -147,7 +147,8 @@ $kasir = $username;
                             <th>Kode</th>
                             <th>Nama Barang</th>
                             <th>Harga</th>
-
+                            <th>Jumlah</th>
+                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -157,7 +158,8 @@ $kasir = $username;
                                 <td><?php echo $item['kode']; ?></td>
                                 <td><?php echo $item['nama']; ?></td>
                                 <td><?php echo format_rupiah($item['harga']); ?></td>
-
+                                <td><?php echo $item['jumlah']; ?></td>
+                                <td><?php echo format_rupiah($item['total']); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
