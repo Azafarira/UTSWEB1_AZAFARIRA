@@ -163,7 +163,15 @@ $kasir = $username;
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
-
+                    <tfoot>
+                        <!-- Commit 8: Cetak Total Belanja -->
+                        <tr>
+                            <td colspan="4" class="total-label">Total Belanja</td>
+                            <td class="total-value"><?php echo format_rupiah($grand_total); ?></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
 
             
         </main>
