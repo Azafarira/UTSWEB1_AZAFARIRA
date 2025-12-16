@@ -173,7 +173,42 @@ $kasir = $username;
                 </table>
             </div>
 
+            <!-- Struk Pembelian -->
+            <div class="purchase-receipt-container">
+                <div class="receipt-box">
+                    <pre class="receipt-content">
+                    
+                        ====== STRUK PEMBELIAN ======
+
+                        Tanggal : <?php echo $tanggal_transaksi; ?>
+                        Kasir   : <?php echo htmlspecialchars($kasir); ?>
+
+                        -----------------------------------------
             
+                        <?php 
+                       
+                        foreach ($daftar_pembelian as $item) {
+                            $line = sprintf(
+                                "%s (%d x %s) = %s\n",
+                                $item['nama'],
+                                $item['jumlah'],
+                                format_rupiah($item['harga']),
+                                format_rupiah($item['total'])
+                            );
+                            echo $line;
+                        }
+                        ?>
+                        -----------------------------------------
+
+                                        Total Belanja : <?php echo format_rupiah($grand_total); ?>
+
+
+                        Terima Kasih Telah Berbelanja di POLGAN MART!
+
+                    </pre>
+                </div>
+            </div>
+   
         </main>
     </div>
 
